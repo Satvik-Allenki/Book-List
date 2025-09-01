@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+
+    <style name="Base.Theme.BooksList" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize colors here -->
+    </style>
+
+
+
+    <style name="Theme.BooksList" parent="Base.Theme.BooksList" />
+</resources>
