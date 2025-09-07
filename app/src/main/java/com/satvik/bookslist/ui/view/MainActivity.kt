@@ -72,11 +72,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openBookDetails(book: BookItem) {
-        val intent = Intent(this, BookDetailActivity::class.java)
-        intent.putExtra("title", book.volumeInfo.title)
-        intent.putExtra("author", book.volumeInfo.authors?.joinToString(", "))
-        intent.putExtra("desc", book.volumeInfo.description)
-        intent.putExtra("image", book.volumeInfo.imageLinks?.thumbnail)
+        val intent = Intent(this, BookDetailActivity::class.java).apply {
+            putExtra("title", book.volumeInfo.title ?: "No Title")
+            putExtra("author", book.volumeInfo.authors?.joinToString(", ") ?: "Unknown Author")
+            putExtra("desc", book.volumeInfo.description ?: "No Description")
+            putExtra("image", book.volumeInfo.imageLinks?.thumbnail ?: "")
+        }
         startActivity(intent)
     }
+
 }
